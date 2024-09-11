@@ -34,13 +34,13 @@ public abstract class Plant extends Organism {
 
     public void addNewPlant(int newRow, int newColumn) {
         switch(this.getTypeName()) {
-            case "grass": {
-                Grass spreaded = new Grass(newRow, newColumn, virtualWorld);
+            case "milkweed": {
+                Milkweed spreaded = new Milkweed(newRow, newColumn, virtualWorld);
                 this.virtualWorld.addOrganism(spreaded);
                 break;
             }
-            case "milkweed": {
-                Milkweed spreaded = new Milkweed(newRow, newColumn, virtualWorld);
+            case "grass": {
+                Grass spreaded = new Grass(newRow, newColumn, virtualWorld);
                 this.virtualWorld.addOrganism(spreaded);
                 break;
             }
@@ -56,6 +56,11 @@ public abstract class Plant extends Organism {
             }
             case "Sosnowski borscht": {
                 Borscht spreaded = new Borscht(newRow, newColumn, virtualWorld);
+                this.virtualWorld.addOrganism(spreaded);
+                break;
+            }
+            case "peony": {
+                Peony spreaded = new Peony(newRow, newColumn, virtualWorld);
                 this.virtualWorld.addOrganism(spreaded);
                 break;
             }

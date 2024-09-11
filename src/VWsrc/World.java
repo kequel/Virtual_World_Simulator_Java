@@ -16,10 +16,13 @@ public class World {
         public List<String> collisionResults;
         private int roundCounter;
 
+        public boolean peonyEaten;
+
         public World() {
                 this.organismsList = new ArrayList<>();
                 this.collisionResults = new ArrayList<>();
                 this.roundCounter = 0;
+                this.peonyEaten = false;
         }
 
         public void setWorld(int rows, int columns) { //needed seperate
@@ -235,7 +238,15 @@ public class World {
                         row=0;
                         column=0;
                 }
-
+                for(int i=0; i<organismcounter; i++){
+                        while(row==0 && column==0){
+                                row = random.nextInt(rows) ;  // -1, 0, 1
+                                column = random.nextInt(columns);
+                        }
+                        addOrganism(new Peony(row, column, this));
+                        row=0;
+                        column=0;
+                }
         }
 
         public Player getPlayer() {

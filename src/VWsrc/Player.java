@@ -15,6 +15,9 @@ public class Player extends Animal {
 
     @Override
     public ImageIcon getImage() {
+        if(shieldActive){
+            return new ImageIcon(Objects.requireNonNull(getClass().getResource("/VWsrc/icons/playerWithShield.png")));
+        }
         return new ImageIcon(Objects.requireNonNull(getClass().getResource("/VWsrc/icons/player.png")));
     }
 

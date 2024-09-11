@@ -169,14 +169,21 @@ public class Gui {
                 int finalJ = j;
                 button.addActionListener(e -> {
                     if (virtualWorld.board[finalI][finalJ] == null) {
-                        String[] options = {"wolf", "sheep", "fox", "antelope", "turtle", "milkweed", "Sosnowski borscht", "guarana", "nightshade berries", "grass"};
-                        String choice = (String) JOptionPane.showInputDialog(boardFrame, "choose organism to add:", "add organism", JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-                        if (choice != null) {
-                            Organism newOrg = virtualWorld.createOrganismFromChoice(choice, finalI, finalJ, virtualWorld);
-                            if (newOrg != null) {
-                                virtualWorld.addOrganism(newOrg);
-                                updateGrid(virtualWorld); // update with new
+                        if (virtualWorld.peonyEaten) {
+                            String[] options = {"wolf", "sheep", "fox", "antelope", "turtle", "milkweed", "Sosnowski borscht", "guarana", "nightshade berries", "grass"};
+                            String choice = (String) JOptionPane.showInputDialog(boardFrame, "choose organism to add:", "add organism", JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+                            if (choice != null) {
+                                Organism newOrg = virtualWorld.createOrganismFromChoice(choice, finalI, finalJ, virtualWorld);
+                                if (newOrg != null) {
+                                    virtualWorld.addOrganism(newOrg);
+                                    virtualWorld.peonyEaten = false;
+                                    updateGrid(virtualWorld); // update with new
+                                }
                             }
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(boardFrame, "you must eat peony to be able to add new organisms.");
+                            updateGrid(virtualWorld);
                         }
                     }
                 });
@@ -282,14 +289,20 @@ public class Gui {
                 int finalJ = j;
                 button.addActionListener(e -> {
                     if (virtualWorld.board[finalI][finalJ] == null) {
-                        String[] options = {"wolf", "sheep", "fox", "antelope", "turtle", "milkweed", "Sosnowski borscht", "guarana", "nightshade berries", "grass"};
-                        String choice = (String) JOptionPane.showInputDialog(boardFrame, "choose organism to add:", "add Organism", JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-                        if (choice != null) {
-                            Organism newOrg = virtualWorld.createOrganismFromChoice(choice, finalI, finalJ, virtualWorld);
-                            if (newOrg != null) {
-                                virtualWorld.addOrganism(newOrg);
-                                updateGrid(virtualWorld);
+                        if(virtualWorld.peonyEaten){
+                            String[] options = {"wolf", "sheep", "fox", "antelope", "turtle", "milkweed", "Sosnowski borscht", "guarana", "nightshade berries", "grass"};
+                            String choice = (String) JOptionPane.showInputDialog(boardFrame, "choose organism to add:", "add Organism", JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+                            if (choice != null) {
+                                Organism newOrg = virtualWorld.createOrganismFromChoice(choice, finalI, finalJ, virtualWorld);
+                                if (newOrg != null) {
+                                    virtualWorld.addOrganism(newOrg);
+                                    virtualWorld.peonyEaten=false;
+                                    updateGrid(virtualWorld);
+                                }
                             }
+                        } else{
+                            JOptionPane.showMessageDialog(boardFrame, "you must eat peony to be able to add new organisms.");
+                            updateGrid(virtualWorld);
                         }
                     }
                 });
