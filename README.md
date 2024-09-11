@@ -15,11 +15,13 @@ The Virtual World Simulator is a turn-based simulation game set on a two-dimensi
 
 - **Human/Player**
   
-  The player controls the human using arrow keys to move in the desired direction. The human has a special ability called Alzur Shield, which can be activated via a button. This skill lasts for 5 rounds and then has a cooldown period of 5 rounds. While active, Alzur Shield scares away all animals in adjacent fields, moving them to random nearby squares.
+The player controls the human using arrow keys to move in the desired direction. The human has a special ability called Alzur Shield, which can be activated via a button. This skill lasts for 5 rounds and then has a cooldown period of 5 rounds. While active, Alzur Shield scares away all animals in adjacent fields, moving them to random nearby squares.
   - **Strength:** 5  
   - **Initiative:** 4
 
-     ![Player Icon](src/VWsrc/icons/player.png) 
+     ![Player Icon](src/VWsrc/icons/player.png)
+
+     ![Player With Shield Icon](src/VWsrc/icons/playerWithShield.png) (_with shield_)
 
 - **Antelope**
   
