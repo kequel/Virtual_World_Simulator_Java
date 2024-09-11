@@ -20,6 +20,7 @@ The Virtual World Simulator is a turn-based simulation game set on a two-dimensi
   - **Initiative:** 4
 
      ![Player Icon](src/VWsrc/icons/player.png) 
+
 - **Antelope**
   
   Moves two squares per turn and has a 50% chance to escape combat by moving to an adjacent, unoccupied square.
