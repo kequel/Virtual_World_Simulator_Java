@@ -6,7 +6,7 @@ This is a Virtual World Simulator written in Java using the Swing library, devel
 - Karolina Glaza [GitHub](https://github.com/kequel)
 
 ### Version
-- Current version: **1.1**
+- Current version: **2.1**
 
 ## Description
 The Virtual World Simulator is a turn-based simulation game set on a two-dimensional grid of size NxM, specified by the user. Recommended sizes are 10x10 or larger to fully experience the variety of organisms. The game allows users to save and load their progress, as well as quit at any time. In the virtual world, simple life forms interact according to their predefined behaviors.
